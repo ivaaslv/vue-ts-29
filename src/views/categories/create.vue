@@ -52,6 +52,7 @@ const storeCategory = async () => {
                                     v-model="kategori" 
                                     class="form-control" 
                                     placeholder="Enter category name" 
+                                    required
                                 />
                                 <div v-if="errors.kategori" class="alert alert-danger mt-2">
                                     {{ errors.kategori[0] }}

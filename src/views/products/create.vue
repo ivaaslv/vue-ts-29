@@ -94,13 +94,13 @@ const storeProduct = async () => {
 
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Name</label>
-                                <input type="text" v-model="name" class="form-control" placeholder="Title Product" />
+                                <input type="text" v-model="name" class="form-control" placeholder="Title Product" required/>
                                 <div v-if="errors.name" class="alert alert-danger mt-2">{{ errors.name[0] }}</div>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Category</label>
-                                <select v-model="id_kategori" class="form-control">
+                                <select v-model="id_kategori" class="form-control" required>
                                     <option value="" disabled>-- Pilih Kategori --</option>
                                     <option 
                                         v-for="cat in categories" 
@@ -117,7 +117,7 @@ const storeProduct = async () => {
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label fw-bold">Price</label>
-                                        <input type="number" v-model="price" class="form-control" placeholder="Price Product" />
+                                        <input type="number" v-model="price" class="form-control" placeholder="Price Product" required />
                                         <div v-if="errors.price" class="alert alert-danger mt-2">{{ errors.price[0] }}</div>
                                     </div>
                                 </div>
@@ -125,7 +125,7 @@ const storeProduct = async () => {
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label fw-bold">Stock</label>
-                                        <input type="number" v-model="stock" class="form-control" placeholder="Stock Product" />
+                                        <input type="number" v-model="stock" class="form-control" placeholder="Stock Product" required/>
                                         <div v-if="errors.stock" class="alert alert-danger mt-2">{{ errors.stock[0] }}</div>
                                     </div>
                                 </div>
@@ -138,10 +138,11 @@ const storeProduct = async () => {
                             </div>
 
                             <div>
+                                <button type="submit" class="btn btn-md btn-primary rounded-3 shadow border-0">Create Product</button>
                                 <router-link to="/products" class="btn btn-md btn-secondary rounded-3 shadow border-0 mx-2">
                                     Cancel
                                 </router-link>
-                                <button type="submit" class="btn btn-md btn-primary rounded-3 shadow border-0">Save</button>
+                                
                             </div>
 
                         </form>
