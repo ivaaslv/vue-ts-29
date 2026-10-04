@@ -30,7 +30,7 @@
 
 <template>
     <div class="container mt-5" style="max-width: 400px;">
-        <div class="card shadow rounded-3 border-0">
+        <div class="card shadow rounded-4 border-0">
             <div class="card-body">
                 <h4 class="card-title text-center mb-4">Login</h4>
                 <form @submit.prevent="login">
@@ -42,7 +42,7 @@
                         <label class="form-label">Password</label>
                         <input type="password" v-model="password" class="form-control" required/>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                    <button type="submit" class="btn btn-warning w-100">Login</button>
                 </form>
             </div>
         </div>
