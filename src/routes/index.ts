@@ -35,6 +35,11 @@ const routes: Array<RouteRecordRaw> = [
         path: '/categories/edit/:id',
         name: 'categories-edit',
         component: () => import('../views/categories/edit.vue')
+    },
+    {
+        path: '/auth/login',
+        name: 'login',
+        component: () => import('../views/auth/login.vue')
     }
 ]
 
