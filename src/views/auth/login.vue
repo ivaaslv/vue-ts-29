@@ -6,23 +6,26 @@
     const email = ref("");
     const password = ref("");
     const error = ref<any>({});
-    const router = useRouter;
+    const router = useRouter();
 
     const login = async() => {
         try {
-            const response = await Api.post("/api/login", {
+            const response = await Api.post("/api/auth/login", {
                 email: email.value,
                 password: password.value,
             });
 
+            // 🟢 Ambil access_token dari response.data.data
+            const token = response.data.data.access_token;
+
             // Simpan token ke localstorage
-            localStorage.setItem("token", response.data.token);
-            localStorage.setItem("user", JSON.stringify(response.data.user));
+            localStorage.setItem("token", token);
+            localStorage.setItem("user", JSON.stringify(response.data.data.user));
 
             router.push("/products");
         } catch (error: any) {
             if (error.response && error.response.data) {
-                errors.value = error.response.data;
+                error.value = error.response.data;
             }
         }
     };
