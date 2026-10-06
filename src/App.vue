@@ -1,6 +1,12 @@
+<script setup lag="ts">
+  import { useRoute } from 'vue-router';
+
+  const route = useRoute();
+</script>
+
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark" v-if="!route.meta.hideNavbar">
       <div class="container">
         <router-link :to="{ name: 'home' }" class="navbar-brand px-4">HOME</router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

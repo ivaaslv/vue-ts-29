@@ -37,14 +37,16 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../views/categories/edit.vue')
     },
     {
-        path: '/auth/login',
+        path: '/login',
         name: 'login',
-        component: () => import('../views/auth/login.vue')
+        component: () => import('../views/auth/login.vue'),
+        meta: { hideNavbar: true } // nyembunyiin navbar
     },
     {
-        path: '/auth/register',
+        path: '/register',
         name: 'register',
-        component: () => import('../views/auth/register.vue')
+        component: () => import('../views/auth/register.vue'),
+        meta: { hideNavbar: true } // nyembunyiin navbar
     }
 ]
 
